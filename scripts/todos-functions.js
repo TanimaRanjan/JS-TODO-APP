@@ -1,4 +1,4 @@
-'user strict'
+'use strict'
 
 // Get saved Todos
 const getSavedTodos = () => {
@@ -53,12 +53,9 @@ const generateTodoDOM = (todo, filter) => {
         renderTodos(todos, filter);
     })
 
-    let temp = ''
-    if (todo.completed) {
-        temp = 'Done'
-    } else {
-        temp = 'Not Done'
-    }
+    
+    let temp = (todo.completed) ?  'Done' : 'Not Done'
+    
     textEl.textContent = ` ${todo.title} - ${temp} `
     containerEl.appendChild(textEl);
     todoEl.appendChild(containerEl)
@@ -124,6 +121,7 @@ const removeTodo = (id) => {
 
 const toggleTodo = (id) => {
     const todo = todos.find((todo) => todo.id === id)
+
     if(todo) {
        todo.completed = !todo.completed;
     }
