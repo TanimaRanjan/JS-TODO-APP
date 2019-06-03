@@ -1,4 +1,4 @@
-'user strict'
+'use strict'
 
 // Calling getSavedTodos on todos-fuction 
 const todos = getSavedTodos();
